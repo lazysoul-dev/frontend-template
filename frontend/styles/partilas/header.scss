@@ -1,0 +1,7 @@
+@import './variables.scss';
+
+.test-header {
+  @apply test-block;
+
+  height: $header-height;
+}

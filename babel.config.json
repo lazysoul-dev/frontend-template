@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "@babel/env"
+  ],
+  "plugins": [],
+  "env": {
+    "test": {
+      "presets": ["@babel/env"],
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": ["./frontend/scripts"],
+            "alias": {
+              "~": "./frontend/scripts"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

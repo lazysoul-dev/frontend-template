@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './partilas/header.scss';
+
+$red: #ff0000;
+
+h2 {
+  color: $red;
+}
