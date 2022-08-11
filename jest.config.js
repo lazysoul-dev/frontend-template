@@ -3,7 +3,7 @@ module.exports = {
   testEnvironment: "@happy-dom/jest-environment",
   verbose: true,
   transform: {
-    "\\.js$": "babel-jest",
+    "\\.[jt]s?$": "babel-jest",
     "\\.vue$": "@vue/vue3-jest",
   }
 }

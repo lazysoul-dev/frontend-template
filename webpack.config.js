@@ -1,15 +1,19 @@
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: [
-    './frontend/scripts/main.js',
+    './frontend/scripts/main.ts',
     './frontend/styles/main.scss',
   ],
   output: {
     path: path.resolve(__dirname, 'frontend-dist'),
     filename: '[name].js',
     clean: true,
+  },
+  resolve: {
+    extensions: ['.ts','.js','.vue','.json',],
   },
   module: {
     rules: [
@@ -19,6 +23,16 @@ module.exports = {
         use: [
           'babel-loader',
         ],
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/\.vue$/],
+          },
+        },
       },
       {
         test: /\.vue$/,
@@ -46,5 +60,12 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: './frontend/fonts/', to: './fonts/' },
+        { from: './frontend/videos/', to: './videos/' },
+        { from: './frontend/images/', to: './images/' },
+      ],
+    }),
   ],
 }

@@ -2,9 +2,8 @@
 
 Template for projects with some template engine. When add this to project make sure paths are correct.
 
-NO TYPESCRIPT
-
 - [X] Building with webpack.
+- [X] Use typescript.
 - [X] Contain all files as `frontend` folder.
 - [X] Minify result js files.
 - [X] Use styling.

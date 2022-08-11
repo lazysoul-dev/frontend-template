@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./frontend-dist",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": [
+    "./frontend/**/*"
+  ]
+}

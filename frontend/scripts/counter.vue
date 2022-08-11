@@ -1,7 +1,8 @@
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
+import type { Ref } from 'vue'
 
-const counter = ref(0)
+const counter: Ref<number> = ref(0)
 </script>
 
 <template>
