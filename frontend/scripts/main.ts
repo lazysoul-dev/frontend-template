@@ -7,7 +7,7 @@ import Counter from './counter.vue'
 const main = async () => {
   const pinia = createPinia()
 
-  createApp(Counter).use(pinia).mount('#counter')
+  createApp(Counter).use(pinia).mount('#test-app')
 
   console.log(sum(1, 2))
 }

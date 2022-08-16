@@ -1,6 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const CopyPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -58,7 +60,21 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'frontend-dist'),
+    },
+    port: 9000,
+  },
   plugins: [
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: './frontend/index.html',
+      minify: false,
+    }),
     new VueLoaderPlugin(),
     new CopyPlugin({
       patterns: [

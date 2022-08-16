@@ -8,7 +8,7 @@ const counter: Ref<number> = ref(0)
 <template>
   <div class="counter">
     <div class="counter-state">{{counter}}</div>
-    <div class="counter-buttons-container">
+    <div class="test-flex test-space-x-[20px]">
       <button @click="counter++" class="counter-button increment">inc</button>
       <button @click="counter--" class="counter-button decrement">dec</button>
     </div>
